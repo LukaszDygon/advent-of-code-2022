@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: aoc-helpers
+Version: 0.1
+Summary: A set of helper functions for Advent of Code
+Home-page: UNKNOWN
+Author: Lukasz Dygon
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: A set of helper functions for Advent of Code
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
