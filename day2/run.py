@@ -62,8 +62,8 @@ def get_round_score(a: str, b: str) -> int:
 
     return score + scores[b]
 
-
 def get_score_2(lines: List[str]) -> int:
     return sum([scores[rps_response[l]] + scores[l[2]] for l in lines if l != ""])
+
 if __name__ == "__main__":
     main()

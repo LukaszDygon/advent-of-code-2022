@@ -41,7 +41,7 @@ def main():
     free_space = total_space - file_system.get_size()
     space_needed = required_space - free_space
     print("1:", sum([dir for dir in dir_sizes if dir < 100_000]))
-    print("2:", sorted([dir for dir in dir_sizes if dir > space_needed])[0])
+    print("2:", min([dir for dir in dir_sizes if dir > space_needed]))
 
 def scan_file_system(lines: List[str]) -> DirectoryNode:
     root = DirectoryNode()
