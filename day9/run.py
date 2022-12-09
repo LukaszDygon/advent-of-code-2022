@@ -11,9 +11,9 @@ class Simulation:
 
     def run(self, lines: List[Tuple[str, int]]) -> Counter[Tuple[str, int]]:
         for direction, distance in lines:
-            self.move(direction, distance)
+            self._move(direction, distance)
 
-    def move(self, direction: str, distance: int):
+    def _move(self, direction: str, distance: int):
         if direction == "U":
             for _ in range(distance):
                 self.head = self.head[0], self.head[1] + 1
@@ -36,16 +36,12 @@ class Simulation:
         for i in range(len(self.tail)):
             if previous[0] - self.tail[i][0] == 2:
                 self.tail[i] = self.tail[i][0] + 1, self._drift(self.tail[i][1], previous[1])
-                # self.tail[i] = self.tail[i][0] + 1, previous[1]
             elif previous[0] - self.tail[i][0] == -2:
                 self.tail[i] = self.tail[i][0] - 1, self._drift(self.tail[i][1], previous[1])
-                # self.tail[i] = self.tail[i][0] - 1, previous[1]
             elif previous[1] - self.tail[i][1] == 2:
                 self.tail[i] = self._drift(self.tail[i][0], previous[0]), self.tail[i][1] + 1
-                # self.tail[i] = previous[0], self.tail[i][1] + 1
             elif previous[1] - self.tail[i][1] == -2:
                 self.tail[i] = self._drift(self.tail[i][0], previous[0]), self.tail[i][1] - 1
-                # self.tail[i] = previous[0], self.tail[i][1] - 1
             else:
                 previous = self.tail[i]
                 continue
